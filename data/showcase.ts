@@ -1,5 +1,5 @@
 /**
- * Side projects shown on the /portfolio index, newest last.
+ * Side projects shown on the /portfolio index, in display order.
  * To add one: drop a 1200x750 screenshot in public/showcase/ and append an entry.
  */
 export interface ShowcaseProject {
@@ -22,19 +22,6 @@ export interface ShowcaseProject {
 
 export const showcase: ShowcaseProject[] = [
   {
-    slug: 'vscode-portfolio',
-    name: 'VS Code Portfolio',
-    description:
-      'My developer portfolio as a VS Code workspace: explorer, tabs, command palette, a working terminal and switchable editor themes.',
-    tags: ['Next.js', 'React 19', 'TypeScript', 'CSS Modules', 'GitHub Pages'],
-    year: 2026,
-    href: '/vscode/',
-    hrefLabel: 'olishiz.github.io/portfolio/vscode',
-    image: '/showcase/vscode.svg',
-    imageAlt: 'VS Code Portfolio: a dark VS Code-style editor showing “Hello, I’m Oliver Sim”',
-    livePreview: true,
-  },
-  {
     slug: 'jomlari',
     name: 'JomLari',
     description:
@@ -45,6 +32,32 @@ export const showcase: ShowcaseProject[] = [
     hrefLabel: 'jomlari.app',
     image: '/showcase/jomlari.svg',
     imageAlt: 'JomLari: “What’s running in Kuala Lumpur” with run club logo cards',
+    livePreview: true,
+  },
+  {
+    slug: 'carbnb',
+    name: 'Carbnb',
+    description:
+      'Car subscription in Malaysia: one monthly fee covers insurance, maintenance and road tax, with booking management, Curlec payments, an inventory dashboard and a master calendar.',
+    tags: ['Next.js', 'React', 'TypeScript', 'Curlec', 'PWA', 'Vercel'],
+    year: 2026,
+    href: 'https://carbnb.my/',
+    hrefLabel: 'carbnb.my',
+    image: '/showcase/carbnb.svg',
+    imageAlt: 'Carbnb: “Experience the future of car ownership” over a red sports car on a mountain road',
+    livePreview: true,
+  },
+  {
+    slug: 'vscode-portfolio',
+    name: 'VS Code Portfolio',
+    description:
+      'My developer portfolio as a VS Code workspace: explorer, tabs, command palette, a working terminal and switchable editor themes.',
+    tags: ['Next.js', 'React 19', 'TypeScript', 'CSS Modules', 'GitHub Pages'],
+    year: 2026,
+    href: '/vscode/',
+    hrefLabel: 'olishiz.github.io/portfolio/vscode',
+    image: '/showcase/vscode.svg',
+    imageAlt: 'VS Code Portfolio: a dark VS Code-style editor showing “Hello, I’m Oliver Sim”',
     livePreview: true,
   },
 ];
