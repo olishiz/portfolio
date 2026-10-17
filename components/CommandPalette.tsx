@@ -40,7 +40,7 @@ const CommandPalette = ({ isOpen, onClose, onToggleTerminal, isTerminalOpen }: C
         category: 'Navigation',
         shortcut: 'G H',
         icon: <VscHome size={16} />,
-        action: () => router.push('/'),
+        action: () => router.push('/vscode'),
       },
       {
         id: 'go-about',
@@ -48,7 +48,7 @@ const CommandPalette = ({ isOpen, onClose, onToggleTerminal, isTerminalOpen }: C
         category: 'Navigation',
         shortcut: 'G A',
         icon: <VscAccount size={16} />,
-        action: () => router.push('/about'),
+        action: () => router.push('/vscode/about'),
       },
       {
         id: 'go-projects',
@@ -56,7 +56,7 @@ const CommandPalette = ({ isOpen, onClose, onToggleTerminal, isTerminalOpen }: C
         category: 'Navigation',
         shortcut: 'G P',
         icon: <VscCode size={16} />,
-        action: () => router.push('/projects'),
+        action: () => router.push('/vscode/projects'),
       },
       {
         id: 'go-credentials',
@@ -64,7 +64,7 @@ const CommandPalette = ({ isOpen, onClose, onToggleTerminal, isTerminalOpen }: C
         category: 'Navigation',
         shortcut: 'G E',
         icon: <VscBook size={16} />,
-        action: () => router.push('/credentials'),
+        action: () => router.push('/vscode/credentials'),
       },
       {
         id: 'go-contact',
@@ -72,7 +72,7 @@ const CommandPalette = ({ isOpen, onClose, onToggleTerminal, isTerminalOpen }: C
         category: 'Navigation',
         shortcut: 'G C',
         icon: <VscMail size={16} />,
-        action: () => router.push('/contact'),
+        action: () => router.push('/vscode/contact'),
       },
       {
         id: 'go-github',
@@ -80,7 +80,7 @@ const CommandPalette = ({ isOpen, onClose, onToggleTerminal, isTerminalOpen }: C
         category: 'Navigation',
         shortcut: 'G G',
         icon: <VscGithubAlt size={16} />,
-        action: () => router.push('/github'),
+        action: () => router.push('/vscode/github'),
       },
       {
         id: 'go-settings',
@@ -88,7 +88,7 @@ const CommandPalette = ({ isOpen, onClose, onToggleTerminal, isTerminalOpen }: C
         category: 'Navigation',
         shortcut: 'G S',
         icon: <VscGear size={16} />,
-        action: () => router.push('/settings'),
+        action: () => router.push('/vscode/settings'),
       },
       {
         id: 'toggle-terminal',
