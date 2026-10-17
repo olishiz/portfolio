@@ -4,7 +4,6 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import Clock from '@/components/showcase/Clock';
 import ShowcaseCard from '@/components/showcase/ShowcaseCard';
 import { showcase } from '@/data/showcase';
-import { withBasePath } from '@/lib/basePath';
 
 import '@/styles/showcase-base.css';
 import styles from '@/styles/Showcase.module.css';
@@ -36,7 +35,6 @@ export default function SideProjectsPage() {
         </a>
         <nav className={styles.nav} aria-label="Elsewhere">
           <a href="https://olishiz.github.io/">Home</a>
-          <a href={withBasePath('/vscode/')}>VS Code</a>
           <a href="https://github.com/olishiz" target="_blank" rel="noopener noreferrer">GitHub</a>
         </nav>
       </header>
