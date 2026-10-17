@@ -1,68 +1,72 @@
-'use client';
+import type { Metadata } from 'next';
+import { Geist, Geist_Mono } from 'next/font/google';
 
-import Link from 'next/link';
-import { VscArrowRight, VscGithub, VscMail, VscCode } from 'react-icons/vsc';
+import Clock from '@/components/showcase/Clock';
+import ShowcaseCard from '@/components/showcase/ShowcaseCard';
+import { showcase } from '@/data/showcase';
+import { withBasePath } from '@/lib/basePath';
 
-import styles from '@/styles/HomePage.module.css';
+import '@/styles/showcase-base.css';
+import styles from '@/styles/Showcase.module.css';
 
-export default function HomePage() {
+const sans = Geist({ subsets: ['latin'], variable: '--sc-sans', display: 'swap' });
+const mono = Geist_Mono({ subsets: ['latin'], variable: '--sc-mono', display: 'swap' });
+
+export const metadata: Metadata = {
+  title: { absolute: 'Side projects | Oliver Sim' },
+  description: 'Things Oliver Sim builds on the side: small products, tools and experiments, shipped for real.',
+  openGraph: {
+    title: 'Side projects | Oliver Sim',
+    description: 'Things I build on the side: small products, tools and experiments, shipped for real.',
+    url: 'https://olishiz.github.io/portfolio/',
+    images: ['https://olishiz.github.io/portfolio/og.png'],
+    type: 'website',
+  },
+};
+
+export default function SideProjectsPage() {
+  const years = [...new Set(showcase.map((p) => p.year))].sort((a, b) => b - a);
+
   return (
-    <div className={styles.page}>
-      <div className={styles.container}>
-        <div className={styles.content}>
-          <div className={styles.header}>
-            <div className={styles.icon}>
-              <VscCode size={32} />
+    <div className={`${styles.root} ${sans.variable} ${mono.variable}`}>
+      <header className={styles.top}>
+        <a href="https://olishiz.github.io/" className={styles.brand}>
+          <span className={styles.brandDot} aria-hidden="true" />
+          Oliver Sim
+        </a>
+        <nav className={styles.nav} aria-label="Elsewhere">
+          <a href="https://olishiz.github.io/">Home</a>
+          <a href={withBasePath('/vscode/')}>VS Code</a>
+          <a href="https://github.com/olishiz" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </nav>
+      </header>
+
+      <main className={styles.main}>
+        <section className={styles.intro}>
+          <p className={styles.eyebrow}>Side projects</p>
+          <h1 className={styles.title}>Things I build after hours. Small, useful, and actually shipped.</h1>
+        </section>
+
+        {years.map((year) => (
+          <section key={year} className={styles.year} aria-label={String(year)}>
+            <div className={styles.yearLabel}>
+              <span className={styles.yearDot} aria-hidden="true" />
+              {year}
             </div>
-          </div>
+            <div className={styles.cards}>
+              {showcase
+                .map((p, i) => ({ p, i }))
+                .filter(({ p }) => p.year === year)
+                .map(({ p, i }) => <ShowcaseCard key={p.slug} project={p} index={i} />)}
+            </div>
+          </section>
+        ))}
+      </main>
 
-          <div className={styles.intro}>
-            <p className={styles.greeting}>Hello, I&apos;m</p>
-            
-            <h1 className={styles.name}>Oliver Sim</h1>
-            
-            <p className={styles.role}>Senior Full Stack Application Developer</p>
-            
-            <div className={styles.divider} />
-            
-            <p className={styles.description}>
-              I build and modernize enterprise applications across frontend,
-              backend, cloud, DevOps, and AI—turning complex workflows into
-              reliable systems people can actually use.
-            </p>
-          </div>
-
-          <div className={styles.actions}>
-            <Link href="/projects" className={styles.primaryAction}>
-              <span>View Projects</span>
-              <VscArrowRight size={18} />
-            </Link>
-            
-            <Link href="/about" className={styles.secondaryAction}>
-              <span>Learn More</span>
-            </Link>
-          </div>
-
-          <div className={styles.links}>
-            <a
-              href="https://github.com/olishiz"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.link}
-            >
-              <VscGithub size={16} />
-              <span>GitHub</span>
-            </a>
-            
-            <span className={styles.linkSeparator}>/</span>
-            
-            <Link href="/contact" className={styles.link}>
-              <VscMail size={16} />
-              <span>Contact</span>
-            </Link>
-          </div>
-        </div>
-      </div>
+      <footer className={styles.foot}>
+        <span>© {new Date().getFullYear()} Oliver Sim.</span>
+        <Clock className={styles.clock} />
+      </footer>
     </div>
   );
 }
