@@ -9,32 +9,32 @@ import styles from '@/styles/Explorer.module.css';
 const explorerItems = [
   {
     name: 'home.tsx',
-    path: '/',
+    path: '/vscode',
     icon: '/logos/react_icon.svg',
   },
   {
     name: 'about.html',
-    path: '/about',
+    path: '/vscode/about',
     icon: '/logos/html_icon.svg',
   },
   {
     name: 'contact.css',
-    path: '/contact',
+    path: '/vscode/contact',
     icon: '/logos/css_icon.svg',
   },
   {
     name: 'projects.js',
-    path: '/projects',
+    path: '/vscode/projects',
     icon: '/logos/js_icon.svg',
   },
   {
     name: 'credentials.json',
-    path: '/credentials',
+    path: '/vscode/credentials',
     icon: '/logos/json_icon.svg',
   },
   {
     name: 'github.md',
-    path: '/github',
+    path: '/vscode/github',
     icon: '/logos/markdown_icon.svg',
   },
 ];
