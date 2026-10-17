@@ -45,13 +45,13 @@ const Layout = ({ children }: LayoutProps) => {
 
   useEffect(() => {
     const navigationRoutes: Record<string, string> = {
-      'h': '/',
-      'a': '/about',
-      'p': '/projects',
-      'e': '/credentials',
-      'c': '/contact',
-      'g': '/github',
-      's': '/settings',
+      'h': '/vscode',
+      'a': '/vscode/about',
+      'p': '/vscode/projects',
+      'e': '/vscode/credentials',
+      'c': '/vscode/contact',
+      'g': '/vscode/github',
+      's': '/vscode/settings',
     };
 
     const handleKeyDown = (e: KeyboardEvent) => {

@@ -15,16 +15,16 @@ import {
 import styles from '@/styles/Sidebar.module.css';
 
 const sidebarTopItems = [
-  { Icon: VscFiles, path: '/' },
-  { Icon: VscGithubAlt, path: '/github' },
-  { Icon: VscCode, path: '/projects' },
-  { Icon: VscBook, path: '/credentials' },
-  { Icon: VscMail, path: '/contact' },
+  { Icon: VscFiles, path: '/vscode' },
+  { Icon: VscGithubAlt, path: '/vscode/github' },
+  { Icon: VscCode, path: '/vscode/projects' },
+  { Icon: VscBook, path: '/vscode/credentials' },
+  { Icon: VscMail, path: '/vscode/contact' },
 ];
 
 const sidebarBottomItems = [
-  { Icon: VscAccount, path: '/about' },
-  { Icon: VscSettings, path: '/settings' },
+  { Icon: VscAccount, path: '/vscode/about' },
+  { Icon: VscSettings, path: '/vscode/settings' },
 ];
 
 const Sidebar = () => {
