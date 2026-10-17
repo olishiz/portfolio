@@ -1,8 +1,10 @@
 import { Metadata } from 'next';
-import { VscFolderOpened, VscGithub, VscLinkExternal } from 'react-icons/vsc';
+import { VscBeaker, VscFolderOpened, VscGithub, VscLinkExternal } from 'react-icons/vsc';
 
 import ProjectCard from '@/components/ProjectCard';
+import SideProjectCard from '@/components/SideProjectCard';
 import { projects } from '@/data/projects';
+import { sideProjects } from '@/data/sideProjects';
 
 import styles from '@/styles/ProjectsPage.module.css';
 
@@ -44,6 +46,23 @@ const ProjectsPage = () => {
             />
           ))}
         </div>
+
+        <section className={styles.section} id="side-projects" aria-labelledby="side-projects-title">
+          <div className={styles.sectionHeader}>
+            <div className={styles.iconWrapper}>
+              <VscBeaker className={styles.icon} size={20} />
+            </div>
+            <div>
+              <h2 id="side-projects-title" className={styles.sectionTitle}>Side projects</h2>
+              <p className={styles.sectionSubtitle}>Small things I build fast and ship for real people.</p>
+            </div>
+          </div>
+          <div className={styles.sideList}>
+            {sideProjects.map((project) => (
+              <SideProjectCard key={project.slug} project={project} />
+            ))}
+          </div>
+        </section>
 
         <footer className={styles.footer}>
           <div className={styles.footerLine} />
